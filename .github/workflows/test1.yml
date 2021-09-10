@@ -18,4 +18,6 @@ jobs:
         Write-Host "---1-----------"
         & where.exe sh
         Write-Host "---2-----------"
+        & where.exe bash
+        Write-Host "---3-----------"
         Get-Command sh
