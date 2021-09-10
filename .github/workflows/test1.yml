@@ -16,6 +16,6 @@ jobs:
     - name: Test1
       run: |
         Write-Host "---1-----------"
-        & where sh
+        & where.exe sh
         Write-Host "---2-----------"
         Get-Command sh
