@@ -38,3 +38,5 @@ jobs:
         time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
         echo "---2---------------------"
         time sysctl kern.boottime || true
+        sleep 1
+        time sysctl kern.boottime || true
