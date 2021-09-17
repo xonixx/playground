@@ -37,4 +37,4 @@ jobs:
         echo "---1---------------------"
         time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
         echo "---2---------------------"
-        time sysctl kern.boottime
+        time sysctl kern.boottime || true
