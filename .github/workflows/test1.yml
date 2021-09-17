@@ -31,6 +31,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Test1
+    - name: Test Date Millis
       run: |
-        date +%s%3N
+        time date +%s%3N
+        echo "------------------------"
+        time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
