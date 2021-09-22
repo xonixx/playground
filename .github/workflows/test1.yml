@@ -23,6 +23,7 @@ jobs:
         Write-Host "---1-----------"
         & "C:\Program Files\Git\bin\bash.exe" test.bash
         Write-Host "---2-----------"
+        sed -i 's/\r$//' test.bash
         & "C:\Windows\System32\bash.exe" test.bash
 #        Write-Host "---1-----------"
 #        & where.exe sh
