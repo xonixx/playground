@@ -7,36 +7,40 @@ on:
     branches: [ main ]
 
 jobs:
-#  build-windows:
-#    runs-on: windows-latest
-#
-#    steps:
-#    - uses: actions/checkout@v2
-#
-#    - name: Test1
-#      run: |
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Test1
+      run: |
 #        Write-Host "---1-----------"
 #        & where.exe sh
 #        Write-Host "---2-----------"
 #        & where.exe bash
 #        Write-Host "---3-----------"
 #        Get-Command sh
+         Write-Host "---1-----------"
+         & "C:\Program Files\Git\bin\bash.exe" test.bash
+         Write-Host "---2-----------"
+         & "C:\Windows\System32\bash.exe" test.bash
 
-  build-nix:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11.0 ]
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Test Date Millis
-      run: |
-        time date +%s%3N
-        echo "---1---------------------"
-        time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
-        echo "---2---------------------"
-        time sysctl kern.boottime || true
-        sleep 1
-        time sysctl kern.boottime || true
+#  build-nix:
+#    runs-on: ${{ matrix.os }}
+#    strategy:
+#      matrix:
+#        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11.0 ]
+#
+#    steps:
+#    - uses: actions/checkout@v2
+#
+#    - name: Test Date Millis
+#      run: |
+#        time date +%s%3N
+#        echo "---1---------------------"
+#        time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
+#        echo "---2---------------------"
+#        time sysctl kern.boottime || true
+#        sleep 1
+#        time sysctl kern.boottime || true
