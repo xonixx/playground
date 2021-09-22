@@ -13,6 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # https://github.com/actions/virtual-environments/issues/2961#issuecomment-801337633
+    - uses: Vampire/setup-wsl@v1
+      with:
+        distribution: Ubuntu-18.04
+
     - name: Test1
       run: |
         Write-Host "---1-----------"
