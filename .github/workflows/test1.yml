@@ -15,16 +15,16 @@ jobs:
 
     - name: Test1
       run: |
+        Write-Host "---1-----------"
+        & "C:\Program Files\Git\bin\bash.exe" test.bash
+        Write-Host "---2-----------"
+        & "C:\Windows\System32\bash.exe" test.bash
 #        Write-Host "---1-----------"
 #        & where.exe sh
 #        Write-Host "---2-----------"
 #        & where.exe bash
 #        Write-Host "---3-----------"
 #        Get-Command sh
-         Write-Host "---1-----------"
-         & "C:\Program Files\Git\bin\bash.exe" test.bash
-         Write-Host "---2-----------"
-         & "C:\Windows\System32\bash.exe" test.bash
 
 #  build-nix:
 #    runs-on: ${{ matrix.os }}
