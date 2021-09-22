@@ -76,3 +76,6 @@ jobs:
             command -v bash
             command -v sh
             command -v awk
+            sh --version
+            awk --version || true
+            curl --version || true
