@@ -64,7 +64,9 @@ jobs:
         with:
 #          envs: 'MYTOKEN MYTOKEN2'
           usesh: true
-#          prepare: pkg install -y curl
+          prepare: |
+            pkg install -y curl
+            pkg install -y bash
           run: |
             set -x
             pwd
@@ -76,6 +78,6 @@ jobs:
             command -v bash
             command -v sh
             command -v awk
-            sh --version
+            bash --version || true
             awk --version || true
             curl --version || true
