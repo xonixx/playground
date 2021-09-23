@@ -47,13 +47,13 @@ jobs:
 #        echo "---1---------------------"
 #        time perl -MTime::HiRes=time -e 'printf "%.9f\n", time'
 #        echo "---2---------------------"
-#        time sysctl kern.boottime || true
+#        time sysctl kern.boottime
 #        sleep 1
-#        time sysctl kern.boottime || true
+#        time sysctl kern.boottime
   # https://github.com/marketplace/actions/freebsd-vm
   testfreebsd:
-#    runs-on: macos-latest
-    runs-on: macos-11
+    runs-on: macos-latest
+#    runs-on: macos-11
     name: A job to run test FreeBSD
 #    env:
 #      MYTOKEN : ${{ secrets.MYTOKEN }}
@@ -75,12 +75,16 @@ jobs:
             ls -lah
             ls -l /
             whoami
-            env
+#            env
             freebsd-version
             command -v bash
             command -v sh
+            command -v curl
+            command -v wget
+            command -v fetch
             command -v awk
-            bash --version || true
-            awk --version || true
-            curl --version || true
-            wget --version || true
+            bash --version
+            awk --version
+            curl --version
+            wget --version
+            fetch --version
