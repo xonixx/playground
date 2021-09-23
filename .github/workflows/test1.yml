@@ -68,7 +68,9 @@ jobs:
           usesh: true
           prepare: |
             pkg install -y curl
+            pkg install -y wget
             pkg install -y bash
+            pkg install -y gawk
           run: |
             set -x
             pwd
@@ -83,8 +85,9 @@ jobs:
             command -v wget
             command -v fetch
             command -v awk
-            bash --version
-            awk --version
-            curl --version
-            wget --version
-            fetch --version
+            command -v gawk
+            bash --version  || true
+            awk --version   || true
+            gawk --version  || true
+            curl --version  || true
+            wget --version  || true
