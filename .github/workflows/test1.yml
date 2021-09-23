@@ -52,7 +52,8 @@ jobs:
 #        time sysctl kern.boottime || true
   # https://github.com/marketplace/actions/freebsd-vm
   testfreebsd:
-    runs-on: macos-latest
+#    runs-on: macos-latest
+    runs-on: macos-11
     name: A job to run test FreeBSD
 #    env:
 #      MYTOKEN : ${{ secrets.MYTOKEN }}
