@@ -75,7 +75,7 @@ jobs:
             ls -lah
             ls -l /
             whoami
-#            env
+            # env
             freebsd-version
             command -v bash
             command -v sh
