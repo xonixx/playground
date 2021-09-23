@@ -50,6 +50,7 @@ jobs:
 #        time sysctl kern.boottime || true
 #        sleep 1
 #        time sysctl kern.boottime || true
+  # https://github.com/marketplace/actions/freebsd-vm
   testfreebsd:
     runs-on: macos-latest
     name: A job to run test FreeBSD
@@ -81,3 +82,4 @@ jobs:
             bash --version || true
             awk --version || true
             curl --version || true
+            wget --version || true
