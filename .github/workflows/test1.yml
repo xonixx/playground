@@ -63,7 +63,7 @@ jobs:
         run: |
           set -x
           echo $SHELL
-          brew install gawk
+          [[ "$OSTYPE" == "darwin"* ]] && brew install gawk
           command -v gawk || true
           command -v awk  || true
           # which gawk || true
