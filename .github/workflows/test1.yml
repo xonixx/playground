@@ -62,5 +62,5 @@ jobs:
       - name: Test in macOS
         run: |
           set -x
-          command -v gawk
-          command -v awk
+          command -v gawk | true
+          command -v awk  | true
