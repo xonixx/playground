@@ -64,3 +64,5 @@ jobs:
           set -x
           command -v gawk | true
           command -v awk  | true
+          which gawk | true
+          which awk  | true
