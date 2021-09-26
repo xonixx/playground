@@ -63,7 +63,7 @@ jobs:
         run: |
           set -x
           echo $SHELL
-          command -v gawk | true
-          command -v awk  | true
-          which gawk | true
-          which awk  | true
+          command -v gawk || true
+          command -v awk  || true
+          which gawk || true
+          which awk  || true
