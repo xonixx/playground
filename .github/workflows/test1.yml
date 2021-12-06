@@ -65,8 +65,9 @@ jobs:
           set -x
           echo $SHELL
           uname -a
-          awk 'BEGIN { while ("echo $0; echo $BASH_VERSION; ps -p $$" | getline) print }'
-          awk 'BEGIN { while ("echo a{1,2,3}" | getline) print }'
+          command -v expect || true
+          #awk 'BEGIN { while ("echo $0; echo $BASH_VERSION; ps -p $$" | getline) print }'
+          #awk 'BEGIN { while ("echo a{1,2,3}" | getline) print }'
           #[[ "$OSTYPE" == "darwin"* ]] && brew install gawk
           #command -v gawk || true
           #command -v awk  || true
