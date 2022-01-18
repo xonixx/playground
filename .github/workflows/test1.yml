@@ -64,8 +64,11 @@ jobs:
           set -x
           echo $SHELL
           uname -a
-          [[ "$OSTYPE" == "darwin"* ]] && brew install gawk
-          command -v gawk || true
-          command -v awk  || true
+          ls -l /dev
+          ls -l /dev/stderr
+          mount
+          #[[ "$OSTYPE" == "darwin"* ]] && brew install gawk
+          #command -v gawk || true
+          #command -v awk  || true
           # which gawk || true
           # which awk  || true
