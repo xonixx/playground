@@ -32,3 +32,5 @@ jobs:
             ls -l /dev
             ls -l /dev/stderr
             mount
+            command -v wget || true
+            command -v curl || true

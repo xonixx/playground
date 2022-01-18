@@ -68,6 +68,9 @@ jobs:
           ls -l /dev
           ls -l /dev/stderr
           mount
+          command -v wget || true
+          command -v curl || true
+
           #command -v expect || true
           #awk 'BEGIN { while ("echo $0; echo $BASH_VERSION; ps -p $$" | getline) print }'
           #awk 'BEGIN { while ("echo a{1,2,3}" | getline) print }'
