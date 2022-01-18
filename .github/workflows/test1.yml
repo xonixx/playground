@@ -55,6 +55,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+#        os: [ ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11.0 ]
         os: [ macos-10.15, macos-11.0 ]
     name: A job to run test macOS
     steps:
@@ -64,6 +65,12 @@ jobs:
           set -x
           echo $SHELL
           uname -a
+          #command -v expect || true
+          #awk 'BEGIN { while ("echo $0; echo $BASH_VERSION; ps -p $$" | getline) print }'
+          #awk 'BEGIN { while ("echo a{1,2,3}" | getline) print }'
+          #[[ "$OSTYPE" == "darwin"* ]] && brew install gawk
+          #command -v gawk || true
+          #command -v awk  || true
           ls -l /dev
           ls -l /dev/stderr
           mount
