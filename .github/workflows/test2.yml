@@ -26,6 +26,7 @@ jobs:
           sudo whoami
           echo "OSTYPE: $OSTYPE"
           echo "DONE!"
+          set
 
   win:
     name: "Tests Win"
@@ -41,5 +42,5 @@ jobs:
           Write-Host $Env:UserName
           Write-Host "which bash:"
           which bash
-          & bash -e -c 'echo "who:"; who; echo "whoami:"; whoami; echo "groups:"; groups||true; echo "OSTYPE: $OSTYPE"; echo done'
+          & bash -e -c 'echo "who:"; who; echo "whoami:"; whoami; echo "groups:"; groups||true; echo "OSTYPE: $OSTYPE"; echo done; set'
           Write-Host "DONE!"
