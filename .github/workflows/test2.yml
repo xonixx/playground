@@ -16,7 +16,13 @@ jobs:
     steps:
       - name: "run tests"
         run: |
-          who; whoami
+          echo "who:"
+          who
+          echo "whoami:"
+          whoami
+          echo "groups:"
+          groups
+          echo "DONE!"
 
   win:
     name: "Tests Win"
@@ -31,5 +37,5 @@ jobs:
           Write-Host $(whoami)
           Write-Host [Environment]::UserName
           Write-Host $Env:UserName
-          & bash -e -c "who; whoami"
+          & bash -e -c "echo 'who:'; who; echo 'whoami:'; whoami; echo 'groups:'; groups; echo done"
           Write-Host "DONE!"
