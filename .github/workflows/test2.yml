@@ -42,5 +42,6 @@ jobs:
           Write-Host $Env:UserName
           Write-Host "which bash:"
           which bash
-          & bash -e -c 'echo "who:"; who; echo "whoami:"; whoami; echo "groups:"; groups||true; echo "OSTYPE: $OSTYPE"; echo done; set'
+          & bash --version
+          & bash -e -c 'echo "who:"; who; echo "whoami:"; whoami; echo "groups:"; groups||true; echo "OSTYPE: $OSTYPE"; echo done; set; echo env; env'
           Write-Host "DONE!"
