@@ -22,6 +22,8 @@ jobs:
           whoami
           echo "groups:"
           groups
+          echo 'sudo whoami:'
+          sudo whoami
           echo "DONE!"
 
   win:
@@ -37,5 +39,5 @@ jobs:
           Write-Host $(whoami)
           Write-Host [Environment]::UserName
           Write-Host $Env:UserName
-          & bash -e -c "echo 'who:'; who; echo 'whoami:'; whoami; echo 'groups:'; groups; echo done"
+          & bash -e -c "echo 'who:'; who; echo 'whoami:'; whoami; echo 'groups:'; groups||true; echo 'sudo whoami:'; sudo whoami; echo done"
           Write-Host "DONE!"
