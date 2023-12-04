@@ -37,7 +37,8 @@ jobs:
         run: |
           Write-Host "current user:"
           Write-Host $(whoami)
-          Write-Host [Environment]::UserName
           Write-Host $Env:UserName
-          & bash -e -c "echo 'who:'; who; echo 'whoami:'; whoami; echo 'groups:'; groups||true; echo 'sudo whoami:'; sudo whoami; echo done"
+          Write-Host "which bash:"
+          which bash
+          & bash -e -c "echo 'who:'; who; echo 'whoami:'; whoami; echo 'groups:'; groups||true; echo done"
           Write-Host "DONE!"
