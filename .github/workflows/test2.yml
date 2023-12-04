@@ -1,0 +1,35 @@
+on:
+  - "push"
+#  - "pull_request"
+
+# test job user
+
+name: "Run tests"
+
+jobs:
+  nix:
+    name: "Tests *nix"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-20.04, ubuntu-22.04, macos-11, macos-12, macos-13 ]
+    steps:
+      - name: "run tests"
+        run: |
+          who; whoami
+
+  win:
+    name: "Tests Win"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-2019, windows-2022 ]
+    steps:
+      - name: "run tests"
+        run: |
+          Write-Host "current user:"
+          Write-Host $(whoami)
+          Write-Host [Environment]::UserName
+          Write-Host $Env:UserName
+          & bash -e -c "who; whoami"
+          Write-Host "DONE!"
